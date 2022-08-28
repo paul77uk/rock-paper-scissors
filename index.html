@@ -4,64 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js-file.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        const choice = ["rock", "paper", "scissors"]
-        let userScore = 0
-        let comScore = 0
-
-        function getComputerChoice() {
-            let randomChoice = Math.floor(Math.random() * choice.length)
-            return choice[randomChoice]
-        }
-
-        function playRound() {
-            const computerSelection = getComputerChoice();
-
-            let userSelection = prompt("Enter rock, paper or scissors").toLowerCase() 
-            while (!choice.includes(userSelection)) {
-                userSelection = prompt("You need to enter rock, paper or scissors").toLowerCase() 
-            }
-            
-            result = 
-            userSelection === "rock" && computerSelection === "scissors"
-            ||
-            userSelection === "scissors" && computerSelection === "paper"
-            ||
-            userSelection === "paper" && computerSelection== "rock" 
-            ? `You Win! ${userSelection} beats ${computerSelection}`
-            : userSelection === computerSelection
-            ? `Draw! You chose ${userSelection} computer chose ${computerSelection}`
-            : `You Lose! ${computerSelection} beats ${userSelection}`
-
-            return result
-                 
-        }
-
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                let play = playRound()
-                console.log(play)
-                if (play.includes("Win")) {
-                    userScore++
-                }
-                if (play.includes("Lose")) {
-                    comScore++
-                }
-            }
-        }
-
-        game()
-        
-        score = 
-        userScore > comScore ? `You Win! ${userScore} - ${comScore}` 
-        : comScore > userScore ? `You Lose! ${userScore} - ${comScore}` 
-        : `Draw! ${userScore} - ${comScore}`
-        
-        console.log(score);
-    </script>
+    <div class="images-container">
+        <div class="user">
+            <h3>User</h3>
+        </div>
+        <img src="./images/rps-rock.svg" alt="rock">
+        <img src="./images/rps-paper.svg" alt="paper">
+        <img src="./images/rps-scissors.svg" alt="scissors">
+        <div class="computer">
+            <h3>Computer</h3>
+        </div>
+    </div>
+    <div class="results"></div>
 </body>
 </html>
 

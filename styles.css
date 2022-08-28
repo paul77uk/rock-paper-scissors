@@ -1,0 +1,14 @@
+.images-container {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 25%;
+    height: 25%;
+}
+
+.results, p {
+    white-space: pre-wrap;
+    text-align: center;
+}
